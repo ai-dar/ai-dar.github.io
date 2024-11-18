@@ -127,11 +127,10 @@ footer p {
     margin: 0 auto;
 }
 
-/* Темный режим */
 
 .dark-mode header, .dark-mode footer {
     background-color: #000033;
-    color: white; /* Оставляем текст в footer белым */
+    color: white; 
 }
 
 .dark-mode .navbar-nav .nav-link {

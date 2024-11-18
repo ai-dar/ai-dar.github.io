@@ -6,14 +6,15 @@
     font-family: Arial, sans-serif;
 }
 
-.dark-mode body {
-    background-color: #121212;
+.dark-mode{
+    background-color: #06222c;
     color: #ffffff;
+    line-height: 1.6;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Светлый режим */
 body {
-    background-color: #f0f0f0;
+    background-color: #87CEEB;
     color: #333;
     line-height: 1.6;
     transition: background-color 0.3s ease, color 0.3s ease;
@@ -96,7 +97,7 @@ button:hover {
 footer p {
     margin: 5px 0;
     text-align: center;
-    color: white; /* Оставляем текст в footer белым */
+    color: white; 
 }
 
 .popup-form {

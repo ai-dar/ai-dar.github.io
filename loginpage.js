@@ -1,15 +1,12 @@
-// Display current date and time
 const now = new Date();
 document.getElementById("dateTime").textContent = now.toLocaleString();
 
-// Elements for toggling between Sign In and Sign Up
 let isSignUp = false;
 const formTitle = document.getElementById("formTitle");
 const submitBtn = document.getElementById("submitBtn");
 const toggleAuthMode = document.getElementById("toggleAuthMode");
 const authBtn = document.getElementById("authBtn");
 
-// Check login status on load and update "Login/Logout" button
 window.addEventListener("load", function () {
     const loggedInUser = localStorage.getItem("loggedInUser");
     if (loggedInUser) {
@@ -22,7 +19,6 @@ window.addEventListener("load", function () {
     }
 });
 
-// Toggle between Sign In and Sign Up forms
 toggleAuthMode.addEventListener("click", function (event) {
     event.preventDefault();
     isSignUp = !isSignUp;
@@ -38,7 +34,6 @@ toggleAuthMode.addEventListener("click", function (event) {
     }
 });
 
-// Form submission for Sign In and Sign Up
 document.getElementById("loginForm").addEventListener("submit", function (event) {
     event.preventDefault();
 
@@ -46,7 +41,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     const password = document.getElementById("password").value;
 
     if (isSignUp) {
-        // Sign Up: save user to localStorage
         if (password.length < 6) {
             alert("Password must be at least 6 characters long.");
         } else {
@@ -60,7 +54,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             toggleAuthMode.textContent = "Don't have an account? Sign up";
         }
     } else {
-        // Sign In: check if user exists
         const users = JSON.parse(localStorage.getItem("users") || "[]");
         const user = users.find(user => user.username === username && user.password === password);
 
@@ -77,7 +70,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     }
 });
 
-// Logout functionality
 function handleLogout(event) {
     event.preventDefault();
     localStorage.removeItem("loggedInUser");

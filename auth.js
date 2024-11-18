@@ -1,6 +1,3 @@
-// auth.js
-
-// Проверка состояния входа и изменение кнопки "Login" на "Logout" при необходимости
 document.addEventListener("DOMContentLoaded", () => {
     const authBtn = document.getElementById("authBtn");
     const loggedInUser = localStorage.getItem("loggedInUser");
@@ -15,7 +12,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
-// Функция для выхода пользователя и изменения кнопки обратно на "Login"
 function handleLogout(event) {
     event.preventDefault();
     localStorage.removeItem("loggedInUser");

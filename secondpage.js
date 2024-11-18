@@ -2,6 +2,7 @@ const now = new Date();
 document.getElementById("dateTime").textContent = now.toLocaleString();
 
 document.querySelector("form").addEventListener("submit", function(event) {
+    event.preventDefault();
     const nameInput = document.getElementById("q1").value;
     const commentInput = document.getElementById("q3").value;
     const ratingInput = document.getElementById("q2").value;

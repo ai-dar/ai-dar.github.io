@@ -1,15 +1,15 @@
 const now = new Date();
 document.getElementById("dateTime").textContent = now.toLocaleString();
 
-document.querySelector("form").addEventListener("submit", function(event) {
-    event.preventDefault();
+document.getElementById("surveyForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Предотвращаем отправку формы на сервер
+
     const nameInput = document.getElementById("q1").value;
     const commentInput = document.getElementById("q3").value;
     const ratingInput = document.getElementById("q2").value;
 
     if (nameInput === "" || commentInput === "") {
         alert("Пожалуйста, заполните все поля!");
-        event.preventDefault();
     } else {
         const surveyData = {
             name: nameInput,
@@ -24,6 +24,9 @@ document.querySelector("form").addEventListener("submit", function(event) {
         localStorage.setItem("surveyHistory", JSON.stringify(surveyHistory));
 
         alert("THANKS!!!!!!");
+
+        // Очищаем форму после сохранения данных
+        document.getElementById("surveyForm").reset();
     }
 });
 

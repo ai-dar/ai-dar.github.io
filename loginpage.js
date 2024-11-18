@@ -70,7 +70,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             authBtn.textContent = "Logout";
             authBtn.href = "#";
             authBtn.addEventListener("click", handleLogout);
-            window.location.href = "assign1.html";
+            window.location.href = "index.html";
         } else {
             alert("Invalid username or password.");
         }

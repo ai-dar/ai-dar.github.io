@@ -6,6 +6,7 @@ const formTitle = document.getElementById("formTitle");
 const submitBtn = document.getElementById("submitBtn");
 const toggleAuthMode = document.getElementById("toggleAuthMode");
 const authBtn = document.getElementById("authBtn");
+const userDisplayName = document.getElementById("userDisplayName"); // Для отображения имени пользователя
 
 window.addEventListener("load", function () {
     const loggedInUser = localStorage.getItem("loggedInUser");
@@ -13,9 +14,11 @@ window.addEventListener("load", function () {
         authBtn.textContent = "Logout";
         authBtn.href = "#";
         authBtn.addEventListener("click", handleLogout);
+        userDisplayName.textContent = `Welcome, ${loggedInUser}`;
     } else {
         authBtn.textContent = "Login";
         authBtn.href = "loginpage.html";
+        userDisplayName.textContent = ""; // Очищаем имя пользователя, если он не вошел в систему
     }
 });
 
@@ -63,6 +66,7 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
             authBtn.textContent = "Logout";
             authBtn.href = "#";
             authBtn.addEventListener("click", handleLogout);
+            userDisplayName.textContent = `Welcome, ${username}`; // Отображаем имя пользователя при входе
             window.location.href = "index.html";
         } else {
             alert("Invalid username or password.");
@@ -76,4 +80,5 @@ function handleLogout(event) {
     alert("You have been logged out.");
     authBtn.textContent = "Login";
     authBtn.href = "loginpage.html";
+    userDisplayName.textContent = ""; // Очищаем имя пользователя при выходе
 }

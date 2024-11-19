@@ -103,7 +103,14 @@ button {
     cursor: pointer;
     transition: background-color 0.2s;
 }
+.navbar-nav .nav-link, #userDisplayName, #authBtn, #toggleThemeBtn {
+    display: flex;
+    align-items: center;
+}
 
+#userDisplayName {
+    font-weight: bold;
+}
 button:hover {
     background-color: #00509E;
 }

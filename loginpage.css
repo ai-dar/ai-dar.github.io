@@ -92,6 +92,15 @@ button {
     transition: background-color 0.3s ease;
 }
 
+.navbar-nav .nav-link, #userDisplayName, #authBtn, #toggleThemeBtn {
+    display: flex;
+    align-items: center;
+}
+
+#userDisplayName {
+    font-weight: bold;
+}
+
 button:hover {
     background-color: #00509E;
 }
